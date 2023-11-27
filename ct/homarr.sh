@@ -66,7 +66,7 @@ cp -R /root/data-homarr-backup/* /opt/homarr/data
 cp -R /root/database-homarr-backup/* /opt/homarr/database
 rm -rf /opt/homarr-${RELEASE}
 cd /opt/homarr
-yarn install &>/dev/null
+yarn install --network-timeout=900000 &>/dev/null
 yarn build &>/dev/null
 systemctl start homarr
 msg_ok "Updated $APP"
